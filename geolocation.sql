@@ -11,7 +11,7 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 17/07/2018 09:13:08
+ Date: 17/07/2018 14:51:29
 */
 
 SET NAMES utf8mb4;
@@ -42,7 +42,7 @@ CREATE TABLE `geomapping`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `store_id`(`store_id`) USING BTREE,
   CONSTRAINT `store_id` FOREIGN KEY (`store_id`) REFERENCES `geostores` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for geostores
@@ -52,7 +52,8 @@ CREATE TABLE `geostores`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `store_domain` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `store_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `is_enabled` tinyint(1) NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
